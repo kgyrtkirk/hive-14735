@@ -7,17 +7,20 @@
 
 <repositories>
      <repository>
-       <id>sonatype-snapshot</id>
-       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-       <releases>
-         <enabled>false</enabled>
+       <id>ugly-local-repo</id>
+       <url>http://localhost:7171/</url>
+<!--       <url>file:///home/kirk/projects/hive-14735/repo/</url>-->
+<!--       <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+<!--       <releases>
+         <enabled>treu</enabled>
        </releases>
        <snapshots>
          <enabled>false</enabled>
        </snapshots>
-    </repository>
+-->    </repository>
   </repositories>
 
+<!--
 
   <dependencyManagement>
     <dependencies>
@@ -29,7 +32,7 @@
 </dependencies>
   </dependencyManagement>
 
-
+-->
    <build>
      <plugins>
        <plugin>
@@ -49,9 +52,9 @@
              <configuration>
                <artifactItems>
                  <artifactItem>
-                   <groupId>junit</groupId>
-                   <artifactId>junit</artifactId>
-                   <version>3.8.1</version>
+                   <groupId>asd</groupId>
+                   <artifactId>samplePub</artifactId>
+                   <version>1.3</version>
                    <type>jar</type>
                    <overWrite>false</overWrite>
                    <outputDirectory>${project.build.directory}/alternateLocation</outputDirectory>
