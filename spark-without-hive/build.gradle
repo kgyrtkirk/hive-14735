@@ -28,12 +28,7 @@ task downloadFile {
 
 task repack(type: Jar){
   from tarTree(resources.gzip(downloadFile.target))
-//  include 'spark-2.0.0-bin-hadoop2-without-hive'
-//  rename('spark-2.0.0-bin-hadoop2-without-hive','.')
-//  eachFile { fileCopyDetails ->
-  //  fileCopyDetails.path = fileCopyDetails.path.replaceAll(/[^\\/]+\//, '')
-//  }
-includeEmptyDirs = false
+  includeEmptyDirs = false
   eachFile {details ->
     details.path -= 'spark-2.0.0-bin-hadoop2-without-hive/'
    }
