@@ -3,7 +3,7 @@ apply plugin: 'maven-publish'
 
 
 group='hive.aux'
-version='1.5'
+version='2.0.0'
 
 publishing {
     publications {
@@ -18,7 +18,7 @@ publishing {
 }
 
 task downloadFile {
-    def sourceUrl=new URL('http://d3jw87u4immizc.cloudfront.net/spark-tarball/spark-2.0.0-bin-hadoop2-without-hive.tgz')
+    def sourceUrl=new URL("http://d3jw87u4immizc.cloudfront.net/spark-tarball/spark-${version}-bin-hadoop2-without-hive.tgz")
     ext.target=file(sourceUrl.path).name
 	outputs.file ext.target
     doLast {
@@ -30,7 +30,7 @@ task repack(type: Jar){
   from tarTree(resources.gzip(downloadFile.target))
   includeEmptyDirs = false
   eachFile {details ->
-    details.path -= 'spark-2.0.0-bin-hadoop2-without-hive/'
+    details.path -= "spark-${version}-bin-hadoop2-without-hive/"
    }
 }
 
