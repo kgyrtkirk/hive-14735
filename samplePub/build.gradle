@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+group='asd'
+version='1.1'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+publishing {
+    repositories {
+        maven {
+            url "../repo"
+        }
+    }
+}
